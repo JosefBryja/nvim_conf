@@ -9,7 +9,7 @@ return{
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyre", "texlab", "marksman" }
+        ensure_installed = { "lua_ls", "pylsp", "texlab", "marksman" }
       })
     end
   },
@@ -18,9 +18,10 @@ return{
     config = function()
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
-      lspconfig.pyre.setup({})
+      lspconfig.pylsp.setup({})
       lspconfig.texlab.setup({})
       lspconfig.marksman.setup({})
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
     end
   }
 }
