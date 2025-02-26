@@ -7,4 +7,4 @@ vim.cmd("set number")
 vim.g.mapleader = " "
 --------------------------------------------------------------
 -- This allows to send highlighted code to the tmux pane 1
-vim.api.nvim_set_keymap('v', '<C-m>', ":w !tmux send-keys -t 1 \"$(cat)\" ENTER<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-m>', ":w !tmux send-keys -t 2 \"$(cat)\" ENTER<CR>", { noremap = true, silent = true })
